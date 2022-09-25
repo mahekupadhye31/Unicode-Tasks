@@ -1,4 +1,3 @@
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -7,14 +6,14 @@ const options = {
 	}
 };
 
-async function my_async_fn() {
-        let response = await fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options);
+async function display_covid_data() {     //async returns a promise
+        let response = await fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options); //await makes the program wait for the promise to get resolved
         response = await response.json();
         console.log(response); // Logs the response
 
         let tableData="";
-        response.countries_stat.forEach(myFunction);
-   function myFunction(values){
+        response.countries_stat.forEach(stats);
+   function stats(values){
     tableData+= `<tr>
                     <td>${values.country_name}</td>
                     <td>${values.active_cases}</td>
@@ -23,17 +22,15 @@ async function my_async_fn() {
                     <td>${values.total_cases_per_1m_population}</td>
                     <td>${values.new_cases}</td>
                     <td>${values.new_deaths}</td>
-
-
-                </tr>`;
+                 </tr>`;
 
 
           }
           document.getElementById("table_body").innerHTML=tableData;
         return response;
 }
-my_async_fn();
-console.log("sana didi");
+display_covid_data();
+
     
 
 
