@@ -1,14 +1,20 @@
- #grad1 {
-    
-     
-    background-image: linear-gradient(#ffe6e6,white);
-  }
-
-  /* #grad2 {
-    height: 200px;
-    background-color:#ff9999; 
-    background-image: linear-gradient(white,#ff9999);
-  }  */
   #grad1 {
     background-image: linear-gradient(to right,#ffb3b3, white);
   }
+  #github{
+    color:white;
+    text-decoration: none;
+  }
+  #instagram{
+    color:#cc0099;
+    text-decoration: none;
+  }
+  #linkedin{
+    color:#668cff;
+    text-decoration: none;
+  }
+  .formerror {
+    color: red;
+    font-size: 10px;
+    
+}
